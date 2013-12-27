@@ -11,17 +11,12 @@ jQuery(function($){
         $pcnt = $('#preview-pane .preview-container'),
         $pimg = $('#preview-pane .preview-container img'),
 
-        xsize =250|| $pcnt.width(),
+        xsize =250|| $pcnt.width(),//set Img Preview size
         ysize =170|| $pcnt.height();
         
- 
-    
-    // In this example, since Jcrop may be attached or detached
-    // at the whim of the user, I've wrapped the call into a function
     initJcrop();
     
-    // The function is pretty simple
-    function initJcrop()//{{{
+    function initJcrop()
     {
       // Hide any interface elements that require Jcrop
       // (This is for the local user interface portion.)
@@ -41,7 +36,6 @@ jQuery(function($){
         jcrop_api = this;
         jcrop_api.animateTo([100,100,400,300]);
 
-        // Setup and dipslay the interface for "enabled"
         $('#can_click,#can_move,#can_size').attr('checked','checked');
         $('#ar_lock,#size_lock,#bg_swap').attr('checked',false);
         $('.requiresjcrop').show();
@@ -49,7 +43,6 @@ jQuery(function($){
       });
 
     };
-    //}}}
 
     function updatePreview(c)
     {
@@ -76,6 +69,7 @@ jQuery(function($){
        $(obj).attr('src',url); 
 
     }
+
     // Use the API to find cropping dimensions
     // Then generate a random selection
     // This function is used by setSelect and animateTo buttons
